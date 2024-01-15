@@ -1,0 +1,82 @@
+[[services]]
+type = "AccessoryInformation"
+
+[services.characteristics]
+Identify = {} # leave property completely out 'cos otherwise Homekit won't accept
+Manufacturer = "Jyri-Matti Lähteenmäki"
+Model = "OpenWeatherMap"
+Name = "OpenWeatherMap"
+SerialNumber = "AA:AA:AA:AA:AA:EE"
+FirmwareRevision = "100.1.1"
+
+
+[[services]]
+type = "TemperatureSensor"
+
+[services.characteristics]
+Name = "Lämpötila"
+ConfiguredName = "Lämpötila"
+[services.characteristics.CurrentTemperature]
+minValue = -50
+minStep = 0.01
+cmd = "cd openweathermap; ./cmd/current_temp.sh"
+
+
+[[services]]
+type = "TemperatureSensor"
+
+[services.characteristics]
+Name = "Feels like"
+ConfiguredName = "Feels like"
+[services.characteristics.CurrentTemperature]
+minValue = -50
+minStep = 0.01
+cmd = "cd openweathermap; ./cmd/current_feels_like.sh"
+
+
+[[services]]
+type = "HumiditySensor"
+
+[services.characteristics]
+Name = "Ilmankosteus"
+ConfiguredName = "Ilmankosteus"
+[services.characteristics.CurrentRelativeHumidity]
+cmd = "cd openweathermap; ./cmd/current_humidity.sh"
+
+
+[[services]]
+type = "FanV2"
+
+[services.characteristics]
+Name = "Tuulennopeus"
+ConfiguredName = "Tuulennopeus"
+Active = true
+[services.characteristics.RotationSpeed]
+maxValue = 50
+minStep = 0.01
+cmd = "cd openweathermap; ./cmd/current_wind_speed.sh"
+
+
+[[services]]
+type = "FanV2"
+
+[services.characteristics]
+Name = "Puuskanopeus"
+ConfiguredName = "Puuskanopeus"
+Active = true
+[services.characteristics.RotationSpeed]
+maxValue = 50
+minStep = 0.01
+cmd = "cd openweathermap; ./cmd/current_wind_gust.sh"
+
+
+[[services]]
+type = "LightSensor"
+
+[services.characteristics]
+Name = "Pilvisyys"
+ConfiguredName = "Pilvisyys"
+[services.characteristics.CurrentAmbientLightLevel]
+minValue = 0
+maxValue = 100
+cmd = "cd openweathermap; ./cmd/current_brightness.sh"
