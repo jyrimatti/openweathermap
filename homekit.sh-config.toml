@@ -75,7 +75,6 @@ type = "LightSensor"
 
 [services.characteristics]
 Name = "Pilvisyys"
-ConfiguredName = "Pilvisyys"
 [services.characteristics.CurrentAmbientLightLevel]
 minValue = 0
 maxValue = 100
