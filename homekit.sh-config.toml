@@ -50,7 +50,7 @@ type = "FanV2"
 [services.characteristics]
 Name = "Tuulennopeus"
 ConfiguredName = "Tuulennopeus"
-Active = true
+Active = 1
 [services.characteristics.RotationSpeed]
 maxValue = 50
 minStep = 0.01
@@ -63,7 +63,7 @@ type = "FanV2"
 [services.characteristics]
 Name = "Puuskanopeus"
 ConfiguredName = "Puuskanopeus"
-Active = true
+Active = 1
 [services.characteristics.RotationSpeed]
 maxValue = 50
 minStep = 0.01
