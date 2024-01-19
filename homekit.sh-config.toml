@@ -52,8 +52,6 @@ Name = "Tuulennopeus"
 ConfiguredName = "Tuulennopeus"
 Active = 1
 [services.characteristics.RotationSpeed]
-maxValue = 50
-minStep = 0.01
 cmd = "cd openweathermap; ./cmd/current_wind_speed.sh"
 
 
@@ -65,8 +63,6 @@ Name = "Puuskanopeus"
 ConfiguredName = "Puuskanopeus"
 Active = 1
 [services.characteristics.RotationSpeed]
-maxValue = 50
-minStep = 0.01
 cmd = "cd openweathermap; ./cmd/current_wind_gust.sh"
 
 

@@ -4,5 +4,5 @@ set -eu
 
 lat=$(cat .openweathermap-lat)
 lon=$(cat .openweathermap-lon)
-curl -s "https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&units=metric&appid=$(cat .openweathermap-apikey)"\
-  | jq -r '.wind.speed'
+printf %.0f "$(curl -s "https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&units=metric&appid=$(cat .openweathermap-apikey)"\
+  | jq -r '.wind.speed')"
