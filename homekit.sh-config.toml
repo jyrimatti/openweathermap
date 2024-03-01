@@ -17,7 +17,7 @@ type = "TemperatureSensor"
 Name = "Lämpötila"
 ConfiguredName = "Lämpötila"
 [services.characteristics.CurrentTemperature]
-minValue = -50
+minValue = -99
 minStep = 0.01
 cmd = "cd openweathermap; ./cmd/current_temp.sh"
 
@@ -29,7 +29,7 @@ type = "TemperatureSensor"
 Name = "Feels like"
 ConfiguredName = "Feels like"
 [services.characteristics.CurrentTemperature]
-minValue = -50
+minValue = -99
 minStep = 0.01
 cmd = "cd openweathermap; ./cmd/current_feels_like.sh"
 
