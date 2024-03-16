@@ -4,4 +4,4 @@ set -eu
 
 location="$1"
 
-curl -s "http://api.openweathermap.org/geo/1.0/direct?q=$location&limit=1&appid=$(cat .openweathermap-apikey)"
+curl --no-progress-meter "http://api.openweathermap.org/geo/1.0/direct?q=$location&limit=1&appid=$(cat .openweathermap-apikey)"

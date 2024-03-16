@@ -1,8 +1,7 @@
 #! /usr/bin/env nix-shell
-#! nix-shell --pure -i dash -I channel:nixos-23.11-small -p dash curl cacert jq
+#! nix-shell --pure -i dash -I channel:nixos-23.11-small -p dash curl cacert jq bc flock
 set -eu
 
-lat=$(cat .openweathermap-lat)
-lon=$(cat .openweathermap-lon)
-printf %.0f "$(curl -s "https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&units=metric&appid=$(cat .openweathermap-apikey)"\
-  | jq -r '.wind.gust')"
+./openweathermap_get.sh\
+  | jq -r '.wind.gust'\
+  | { read -r x; printf %.0f "$x"; }
