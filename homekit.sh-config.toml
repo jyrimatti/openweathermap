@@ -1,3 +1,7 @@
+bridge = "openweathermap"
+port = 12302
+username = "AA:AA:AA:AA:AA:02"
+
 [[services]]
 type = "AccessoryInformation"
 
@@ -6,7 +10,7 @@ Identify = {} # leave property completely out 'cos otherwise Homekit won't accep
 Manufacturer = "Jyri-Matti Lähteenmäki"
 Model = "OpenWeatherMap"
 Name = "OpenWeatherMap"
-SerialNumber = "AA:AA:AA:AA:AA:EE"
+SerialNumber = "AA:AA:AA:AA:AA:02"
 FirmwareRevision = "100.1.1"
 
 
