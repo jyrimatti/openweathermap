@@ -5,4 +5,8 @@ set -eu
 
 . ./openweathermap_env.sh
 
-bkt --discard-failures --ttl 60s --stale 50s -- curl --no-progress-meter -L "https://api.openweathermap.org/data/2.5/weather?lat=$OPENWEATHERMAP_LAT&lon=$OPENWEATHERMAP_LON&units=metric&appid=$OPENWEATHERMAP_APIKEY"
+lock="${BKT_CACHE_DIR:-/tmp}/openweathermap.lock"
+
+flock "$lock" \
+    bkt --discard-failures --ttl 60s --stale 50s -- \
+        curl --no-progress-meter -L "https://api.openweathermap.org/data/2.5/weather?lat=$OPENWEATHERMAP_LAT&lon=$OPENWEATHERMAP_LON&units=metric&appid=$OPENWEATHERMAP_APIKEY"
